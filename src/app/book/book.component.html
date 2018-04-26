@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Book List
+    <a [routerLink]="['/book-add']" class="btn btn-default btn-lg">
+      <i class="far fa-plus-square"></i>
+    </a>
+  </h1>
+
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let book of books">
+      <div class="card" style="margin-bottom: 1rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }} | {{ book.author }}</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a [routerLink]="['/book-details', book._id, {details: true}]" class="btn btn-primary btnbookdetails">Show Detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
